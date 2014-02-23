@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>L2OEF1</title>
+		<link rel="stylesheet" href="styleOef1.css" />
+	</head>
+	<body>
+
+	<div id="flappyGreen" class="circle"></div>
+	<div id="flappyPurple" class="circle"></div>
+	<div id="flappyYellow" class="circle"></div>
+ 
+	</body>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() 
+		{
+		  $(".circle").click(function()
+		  {
+			$("#flappyYellow").addClass("animateFlappyYellow");
+			$("#flappyPurple").addClass("animateFlappyPurple");
+			$("#flappyGreen").addClass("animateFlappyGreen");
+		  });
+		});
+
+	</script>
+
+</html>

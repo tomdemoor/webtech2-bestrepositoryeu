@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>L2OEF2</title>
+		<link rel="stylesheet" href="styleOef2.css" />
+	</head>
+	<body>
+		<div id="login">
+			<div id="txt">
+			<figure>
+				<img src="images/imddavaltmee.png">
+			</figure>
+			<h2>Welcome to the IMD workshop</h2>
+			<p>Please select a user below</p>
+			</div>
+		</div>
+		
+		<div id="user">
+			<ul>
+				<li><img src="images/user1.jpg"></li>
+				<li><img src="images/user2.jpg"></li>
+				<li><img src="images/user3.jpg"></li>
+			</ul>
+		</div>
+ 
+	</body>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() 
+		{
+			$("#txt").addClass("slidein");
+			$("#user").addClass("flipiny");
+			$("#login").addClass("flipinx");
+		});
+
+	</script>
+</html>

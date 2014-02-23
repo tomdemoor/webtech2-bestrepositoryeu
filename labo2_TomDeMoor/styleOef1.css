@@ -1,0 +1,53 @@
+body
+{
+	background-color: #f7f7f7;
+}
+
+#flappyYellow
+{
+	background-color: #5fe3e1;
+	background-image:url("images/FlappyYellow.png");
+}
+
+#flappyPurple
+{
+	background-color: #5fe3e1;
+	background-image:url("images/FlappyPurple.png");
+}
+
+#flappyGreen
+{
+	background-color: #5fe3e1;
+	background-image:url("images/FlappyGreen.png");
+}	
+
+.circle
+{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	position: absolute;
+	background-size:200px 200px;
+	background-repeat: no-repeat;
+}
+
+.animateFlappyYellow
+{
+	-webkit-transition: 2s;
+	-webkit-transform: translateX(0px) translateY(300px) rotate(3180deg);
+	-webkit-animation-fill-mode: forwards;
+}
+
+.animateFlappyPurple
+{
+	-webkit-transition: 2s;
+	-webkit-transform: translateX(300px) translateY(0px) rotate(3280deg);
+	-webkit-animation-fill-mode: forwards;
+}
+
+.animateFlappyGreen
+{
+	-webkit-transition: 2s;
+	-webkit-transform: translateX(300px) translateY(300px) rotate(2970deg);
+	-webkit-animation-fill-mode: forwards;
+}
