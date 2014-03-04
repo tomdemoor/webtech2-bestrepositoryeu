@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IMDo App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		body{background-color: black;color: white;font-family: Arial;font-weight: bold;}
+		h1{text-align: center; width: 100%;}
+		li{list-style-type: none;background-color: #404040;width: 400px;height: 30px;margin: 0 auto;padding: 10px;}
+		input{width: 358px; height: 30px;background-color: #d2d2d2;border: 0;float: left;}
+		button{height: 33px;width: 30px;margin-left: 10px;color: white;background-color: black;border: 0;}
+		.prior-high{background-color: #f22f20;}
+		.prior-medium{background-color: #f33f1c;}
+		.prior-low{background-color: #f26920;}
+		.done{text-decoration: line-through;background-color: #1ab41f;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>IMDo App</h1>
+		<ul>
+			<li>Klik om je item als gedaan te checken</li>
+			<li>Dubbelklik om je item als ongedaan te checken</li>
+		</ul>
+
+		<ul id="todolist">
+			<li id="todo-add-item"><input type="text" id="add-item-text"><button type="button"> + </button></li>
+			<li id="todo-item1" class="prior-high">Make a JS framework</li>
+			<li id="todo-item2"	class="prior-high">A blood sacrifice for our supreme leader Goodbytes</li>
+			<li id="todo-item3" class="prior-medium">Get a backrub</li>
+			<li id="todo-item4" class="prior-low">Eat a nice brownie</li>
+		</ul>
+
+	</div><!-- end container -->
+
+	<script>
+	//KADERWERK
+		var IMDelement = function(element)
+		{
+			this.element = element;
+			this.isArray = (element.length > 1) ? true : false;
+		}
+
+		//Schoon kleurke toevoegen
+		IMDelement.prototype.color = function(p_color)
+		{
+			if(this.isArray)
+			{
+				for(var i=0, l=this.element.length; i<l; i++)
+				{
+					this.element[i].style['color'] = p_color;
+				}
+			}
+			else
+			{
+				this.element.style['color'] = p_color;
+			}
+			return this.element;	
+		}
+
+		//Voegt klasse doe aan een obj
+		//overschrijft gn huidige klasse
+		IMDelement.prototype.addClass = function(p_className)
+		{
+			if(this.isArray)
+			{
+				for(var i=0, l=this.element.length; i<l; i++)
+				{
+					this.element[i].classList.add(p_className);
+				}
+			}
+			else
+			{
+				this.element.classList.add(p_className);
+			}
+			return this.element;	
+		}
+
+		//remove class
+		IMDelement.prototype.removeClass = function(p_className)
+		{
+			if(this.isArray)
+			{
+				for(var i=0, l=this.element.length; i<l; i++)
+				{
+					this.element[i].classList.remove(p_className);
+				}
+			}
+			else
+			{
+				this.element.classList.remove(p_className);
+			}
+			return this.element;	
+		}
+
+		//.click functie voor actie de ondernemen bij clicks
+		IMDelement.prototype.click = function(action)
+		{
+			if(this.isArray)
+			{
+				for(var i=0, l=this.element.length; i<l; i++)
+				{
+					this.element[i].addEventListener('click', action);
+				}
+			}
+			else
+			{
+				this.element.addEventListener('click', action);
+			}
+			return this.element;	
+		}
+
+		//.doubleclick functie voor actie de ondernemen bij clicks
+		IMDelement.prototype.doubleClick = function(action)
+		{
+			if(this.isArray)
+			{
+				for(var i=0, l=this.element.length; i<l; i++)
+				{
+					this.element[i].addEventListener('dblclick', action);
+				}
+			}
+			else
+			{
+				this.element.addEventListener('dblclick', action);
+			}
+			return this.element;	
+		}
+
+		//element selecteren
+		var $ = function(p_element)
+		{
+			/*if(typeof(selector)== "object"{
+				return new WrapperElement(selector)
+			}*/
+
+			if(typeof(p_element) == "object")
+			{
+				return new IMDelement(p_element)
+			}
+
+			var firstCharacter = p_element.charAt(0);
+			var result;	
+			switch(firstCharacter)
+			{
+				case "#":
+					var idToSelect = p_element.substring(1, p_element.length);
+					var element = document.getElementById(idToSelect);
+					var result = new IMDelement(element);
+					break;
+				case ".":
+					var classToSelect = p_element.substring(1, p_element.length); 
+					var elements = document.getElementsByClassName(classToSelect);
+					var result = new IMDelement(elements);
+					break;
+				default: 
+					var elements = document.getElementsByTagName(p_element);
+					var result = new IMDelement(elements);
+					break;
+			}
+			return result;
+		}
+
+		// EIGEN CODE
+		$(".prior-high").addClass("done");
+		//$("#todo-item1").addClass("done");
+		//$("li").addClass("done");
+
+			//mark as done
+			$("li").click(function()
+			{
+				$(this).addClass("done");
+			});
+
+			//mark as undone
+			$("li").doubleClick(function()
+			{
+				$(this).removeClass("done");
+			});
+	</script>
+
+</body>
+</html>
