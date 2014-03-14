@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Prototype Weather App</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400' rel='stylesheet' type='text/css'>
+	</head>
+	<body>	
+	
+	<div id="content">
+		<div id="location">
+			<span id="loc-symbol">&#5121;</span>
+			<span id="loc-city">Antwerp</span>
+		</div>
+		<div id="now">
+			<span id="now-date" class="datecss">Tuesday</span>
+			</br>
+			<span id="now-txt" class="txtcss">sunny weather</span>
+			<figure><canvas id="now-icon" width="128" height="128"></canvas></figure>
+			<span id="now-degrees">22°</span>
+		</div>
+		<div id="tomorrow">
+			<span id="tom-date" class="datecss">Wednesday</span>
+			</br>
+			<span id="tom-txt" class="txtcss">cloudy with a chance of rain</span>
+		</div>
+		<div id="week">
+			<br>
+			<span id="proto">prototype</span>
+		</div>
+	</div>
+
+	</body>
+	<script src="js/skycons.js"></script>	
+	<script src="js/jquery.js"></script>
+	<script src="js/script.js"></script>
+</html>
