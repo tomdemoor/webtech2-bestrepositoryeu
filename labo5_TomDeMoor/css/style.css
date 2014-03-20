@@ -1,0 +1,427 @@
+/*RESET*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*---------------------------------------ELEMENTS STYLE----------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*MYSHEET*/
+
+body
+{
+	/*font-family: 'Alegreya Sans SC', sans-serif;*/
+	font-family: 'roboto-regular', sans-serif;
+	background-color: #faaa37;
+	color: white;
+	line-height: 25px;
+}
+
+h1
+{
+	font-size: 36px;
+	font-family: 'oxygen-regular', sans-serif;
+
+}
+
+#dynamic
+{
+	font-size: 20px;
+	font-family: 'oxygen-regular', sans-serif;
+	line-height: 45px;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover
+{
+	color: white;
+	font-style: italic;
+}
+
+#content
+{
+	/*padding: 50px 50px;*/
+	padding: 30px 50px 100px 50px;
+	text-align: center;
+}
+
+#content #now
+{
+	margin: 0 auto;
+	width: 200px;
+	margin-top: 16px;
+	/*margin-top: 25px;*/
+	font-size: 30px;
+	text-transform: uppercase;
+	position: absolute;
+	/*display: none;*/
+}
+
+
+#content #now #now-icon
+{
+	height: 100px;	
+	float: left;
+}
+
+#content #now #now-degrees
+{
+	position: absolute;
+	margin-top: 25px;
+	font-size: 60px;
+	margin-left: -30px;
+}
+
+#content #txt
+{
+	font-size: 20px;
+	
+	/*margin-top: 155px;*/
+	/*margin-top: 60px;*/
+	text-align: left;
+	
+}
+
+#information
+{
+	transition: -webkit-transform 2s;
+	transition: transform 2s;
+	/*margin-top: 25px;*/
+	margin-top: 18px;
+}
+
+#content #cMail
+{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#content #cMail #errorMessage
+{
+	color: black;*/
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+ #submitEmail
+{
+	/*background-color: black;*/
+	/*background-color: #01af66;*/
+	/*background-color: #af014a;*/
+	/*background-color: #d34006;*/
+	background-color: #8b0000;
+	color: white;
+	border-radius: 3px;
+	border: 0;
+	padding: 11px;
+	font-size: 20px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#userEmail
+{
+	padding: 10px;
+	font-size: 20px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	width: 150px;
+}
+
+
+.hidden
+{
+	display: none;
+}
+
+.loadingImage
+{
+	/*width: 35px;
+	margin-top: 10px;*/
+	margin-left: 5px;
+	margin-top: -20px;
+	display: none;
+	position: absolute;
+}
+
+#facebookActions
+{
+	margin-top: 10px;
+}
+
+#logos
+{
+	height: 75px;
+}
+
+.schoolLogo
+{
+	height: 50px;
+	margin-bottom: 30px;
+	padding-right: 30px;
+}
+
+.imdLogo
+{
+	padding-left: 30px;
+	margin-bottom: 30px;
+	width: 50px;
+}
+
+#facebookButtons
+{
+	float: left;
+	padding-right: 20px;
+}
+
+.terrAppke
+{
+	/*color: #d34006*/
+	color: #8b0000;
+}
+
+#twitter-widget-0
+{
+	margin-top: 5px;
+}
+/*--------------------------------------------MEDIA QUERIES---------------------------------------------------------------*/
+
+@media only screen and (min-width: 640px)
+{
+
+	#dynamic
+	{
+		font-size: 36px;
+		max-width: 700px;
+	}
+
+
+	#content
+	{
+		text-align: left;
+	}
+
+	#content #now
+	{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	#content #now #now-degrees
+	{
+		margin-left: 30px;
+	}
+
+	#content #txt
+	{
+		/*max-width: 600px;*/
+		max-width: 800px;
+	}
+
+	#userEmail
+	{
+		width: 250px;
+	}
+
+}
+
+@media only screen and (max-width: 390px)
+{
+	#facebookButtons 
+	{
+		float: none;
+		padding-right: 20px;
+		margin-bottom: 10px;
+	}
+}
+
+/*---------------------------CSS-ANIMATIONS--------------------------------------------------------*/
+
+.animate
+{
+	/*-webkit-transform-origin: top bottom;
+ 	-webkit-animation: flipWeatherDiv 2s;
+ 	-webkit-animation-fill-mode: forwards;
+ 	transform-origin: top bottom;
+ 	animation: flipWeatherDiv 2s;
+ 	animation-fill-mode: forwards;
+ 	ms-transform-origin: top bottom;
+ 	ms-animation: flipWeatherDiv 2s;
+ 	ms-animation-fill-mode: forwards;*/
+ 	-webkit-animation: fadeIn 3s;
+    animation: fadeIn 3s;
+
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+/*@-webkit-keyframes flipWeatherDiv
+{
+ 0% { -webkit-transform: perspective(600px) rotateX( 90deg ); opacity: 0; }
+ 40% { -webkit-transform: perspective(600px) rotateX( -10deg ); }
+ 70% { -webkit-transform: perspective(600px) rotateX( 10deg ); }
+ 100% { -webkit-transform: perspective(600px) rotateX( 0deg ); opacity: 1; }
+}*/
+
+@-webkit-keyframes flipWeatherDiv
+{
+ 0% { -webkit-transform: perspective(600px) rotateX( 90deg ); opacity: 0; }
+ 100% { -webkit-transform: perspective(600px) rotateX( 0deg ); opacity: 1; }
+}
+
+@keyframes flipWeatherDiv
+{
+ 0% { transform: perspective(600px) rotateX( 90deg ); opacity: 0;}
+ 100% { transform: perspective(600px) rotateX( 0deg ); opacity: 1;}
+}
+
+
+
+.txtGoDown {
+   -webkit-transform: translateY(90px);
+   transform: translateY(90px);
+   ms-transform: translateY(90px);
+}
+
+
+
+.animateBackgroundColorChoice1 {
+    background-color: #b6d8ec;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+.animateBackgroundColorChoice2 {
+    background-color: #81bcde;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+.animateBackgroundColorChoice3 {
+    background-color: #81bcde;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+.animateBackgroundColorChoice4 {
+    background-color: #40d0bd;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+.animateBackgroundColorChoice5 {
+    background-color: #faaa37;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+.animateBackgroundColorChoice6 {
+    background-color: #f9832d;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+.animateBackgroundColorChoice7 {
+    background-color: #f9672d;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+
+.animateBackgroundColorChoice8 {
+    background-color: #f94f2d;
+    -webkit-transition: background-color 1500ms linear;
+    -moz-transition: background-color 1500ms linear;
+    -o-transition: background-color 1500ms linear;
+    -ms-transition: background-color 1500ms linear;
+    transition: background-color 1500ms linear;
+}
+
+
+/*---------------------FONTS-----------------------------------------*/
+
+@font-face {
+	font-family: 'roboto-regular';
+	src: url(../fonts/Roboto-Regular.ttf);
+	src: local('roboto-regular'), url(../fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'oxygen-regular';
+	src: url(../fonts/Oxygen-Regular.ttf);
+	src: local('oxygen-regular'), url(../fonts/Oxygen-Regular.ttf) format('truetype');
+}
