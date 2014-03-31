@@ -1,18 +1,50 @@
 extends layout
 
 block content
-  .navcontainer
-    .navbar
-      ul.nav
-        li
-          a(href="#") News Bulletin
-        li
-          a(href="#") My Visage  
-        li.active
-          a(href="#") Telegrams
-        li
-          input(type="text", name="user")
-
-
-  h1= title
-  p Welcome to #{title}
+  #contentwrap
+    #header
+      h1 Welcome to #{title}
+      h2 Profile
+      h3 0 friends
+    #sidebarleft
+      .profilepic
+      .navbar
+        ul.nav
+          li
+            a(href="#") News Bulletin
+          li
+            input(type="text", name="search")  
+          li.active
+            a(href="#") Telegrams
+          li
+            a(href="#") My Visage
+          li
+            a(href="#") Photo Collection  
+          li.active
+            a(href="#") Poke friend (new!)
+          li
+            a(href="#") My Visage  
+    #contentwrap
+      .bulletin
+      .sendwrap
+        h2 Add to news bulletin.
+        ul.sendbox
+          li
+            label(for="user") Post as:
+            br
+            input(id="user" type="text" name="user" placeholder="your name")
+          li
+            label(for="question") Message:
+            br
+            textarea(id="question" type="text" placeholder="your message" maxlength="100")
+          li
+            input(id="send" type="submit" value="Post")
+    #sidebarright
+      .adbar
+        ul.ads
+          li
+            #adone
+          li
+            #adtwo
+          li
+            #adthree
