@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  #contentwrap
+  #content
     #header
-      h1 Welcome to #{title}
+      h1 Welcome to #{title} '91
       h2 Profile
       h3 0 friends
     #sidebarleft
@@ -13,7 +13,7 @@ block content
           li
             a(href="#") News Bulletin
           li
-            input(type="text", name="search")  
+            input(type="text", name="search" id="search" placeholder="search")
           li.active
             a(href="#") Telegrams
           li
@@ -25,9 +25,10 @@ block content
           li
             a(href="#") My Visage  
     #contentwrap
+      h2#bulletintitle News Bulletin
       .bulletin
       .sendwrap
-        h2 Add to news bulletin.
+        h3 Add to news bulletin.
         ul.sendbox
           li
             label(for="user") Post as:
