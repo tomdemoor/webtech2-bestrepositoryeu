@@ -19,7 +19,7 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
   
 ##### Lab Notes
 
-<dl>
+</dl>
  
   
 | Tables        | Are           | Cool  |
@@ -27,9 +27,6 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | 'centered'    |   $12 |
 | zebra stripes | are neat      |    $1 |
-
-
-</dl>
 
 * * *
 
