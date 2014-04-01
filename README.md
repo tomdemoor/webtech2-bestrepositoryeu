@@ -5,11 +5,11 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 
 ### Labo 1: GIT To Work ###
 
-  ##### Challenge #####
+  ##### Challenge
   
-  ##### What I've Learned #####
+  ##### What I've Learned
   
-  ##### Lab Notes #####
+  ##### Lab Notes
 
 ### Labo 2: Mastering CSS animations and transformations ###
 
