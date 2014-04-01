@@ -23,8 +23,21 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
  
 Command | Description 
 --- | --- 
-`git clone url` | clones git repository to current map 
-1 | 2
+`git init` | creates a git repository directory 
+`git clone url` | clones git repository to current map location
+`git status` | check tracked files and their status compared with the original directory on github
+`git branch` | shows all branches, working stations you make when working on your repository files
+`git checkout name` | switches to a branch 'name'
+`git checkout –b name` | creates a branch 'name' and switches to it
+`git branch -D name` | Deletes the branch name
+`git add filename` | adds file changes in your current directory to your index
+`git add -A` | adds files and all removed files will also get discarted
+`git rm filename` | removes file changes in your current directory to your index
+`git commit -m 'info' ` | add a description to the changes you've made after you add them
+`git checkout master` | go to your master branch
+`git merge name ` | merges a branch called 'name' with your current one (master)
+`git push master origin ` | pushes everything to repository on github
+
 
 * * *
 
