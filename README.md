@@ -11,6 +11,8 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
   
 ##### Lab Notes
 
+---
+
 ### Labo 2: Mastering CSS animations and transformations ###
 
 ### Labo 3: Advanced JS part 1 ###
