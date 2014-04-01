@@ -20,7 +20,14 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 ##### Lab Notes
 
 <dl>
-  <dd>Info</dd>
+  <dd>
+  
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+</dd>
 </dl>
 
 * * *
