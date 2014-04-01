@@ -8,13 +8,15 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 ##### Challenge
 
 <dl>
-  <dd>Info</dd>
+  <dd>We had to form a team of 3-4 people and make a mini website with cooking receipes to refresh our memory about CSS and HTML, basic things we've learned in a previous course.</dd>
+  <dd>Learn to work with GIT and its features. Commit the project, and your invidivual work, to one directory.</dd>
 </dl>
   
 ##### What I've Learned
 
 <dl>
-  <dd>Info</dd>
+  <dd>In this lesson I had my first experience working with GIT. The syntax, the commands, the right workflow, etc.</dd>
+  <dd>I've learned it's an easy way to share code with others and to analyse your own workflow. By being able to view all changes it's easy to fall back on a previous version of a project.</dd>
 </dl>
   
 ##### Lab Notes
