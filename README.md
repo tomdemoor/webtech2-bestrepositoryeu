@@ -21,10 +21,10 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 
 </dl>
  
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+Command | Description 
+--- | --- 
+`git clone url` | clones git repository to current map 
+1 | 2
 
 * * *
 
