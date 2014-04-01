@@ -1,9 +1,15 @@
 webtech2-bestrepositoryeu
 =========================
 
-Webtechnology labo solutions for my supreme leader Goodbytes.
+Webtechnology labo solutions for 2IMD by Tom De Moor
 
 ### Labo 1: GIT To Work ###
+
+  ##### Challenge #####
+  
+  ##### What I've Learned #####
+  
+  ##### Lab Notes #####
 
 ### Labo 2: Mastering CSS animations and transformations ###
 
