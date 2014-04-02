@@ -161,6 +161,7 @@ h3
 .newspost
 {
 	padding: 10px 10px;
+	display: block;
 }
 
 .user
@@ -173,6 +174,19 @@ h3
 {
 	font-style:italic;
 	margin-bottom: 5px;
+}
+
+.vote
+{
+	width: 40px;
+	height: 15px;
+	text-align: center;
+	background-color: #d4d0c7;
+	margin-top: -5px;
+	margin-left: 10px;
+	display: block;
+	border: 2px outset buttonface;
+	font-size: 15px;
 }
 
 #bulletintitle
@@ -228,7 +242,7 @@ h1, h2, h3
 {
 	width: 1000px;
 	padding: 20px 20px;
-	height: 620px;
+	height: 630px;
 }
 
 #header

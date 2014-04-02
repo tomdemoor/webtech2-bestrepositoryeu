@@ -1,3 +1,6 @@
+//msgid maken buiten doc.ready zodat deze voro elke gebruiker hetzelfde zijn
+//var postID = 0;
+
 $(document).ready(function(){
 
 	//client aanmaken
@@ -8,12 +11,20 @@ $(document).ready(function(){
 
 	//subscribe, vraag printen
 	//http://faye.jcoglan.com/browser/subscribing.html
-	var subscription = client.subscribe('/post', function(message) {
+	var postSubscribtion = client.subscribe('/post', function(message) {
   		// handle messages
-  		$(".bulletin").append("<p class='newspost'><span class='user'>" + message.user + "</span><span class='posted'> posted:</span></br>" + message.post + "</p>")
+      //voeg ID aan messages toe om ze uniek te maken
+      //id='p" + postID + "'
+  		$(".bulletin").append("<p class='newspost'><span class='user'>" + message.user + "</span><span class='posted'> posted:</span></br>" + message.post + "</br><div class='vote'>vote</div></p>")
 	});
-  		//onclick subscribe / publish
-  		$('#send').on('click', function(){
+
+  var voteSubscribtion = client.subscribe('/vote', function(btn) {
+      //apply effect on parent
+      $(btn.vote).css("color","red");
+  });
+
+  	//onclick subscribe / publish
+  $('#send').on('click', function(){
   			//haal values op
   			var userVal = $('#user').val();
   			var postVal = $('#question').val();
@@ -29,11 +40,22 @@ $(document).ready(function(){
     		$(".error").text("");
     		$(".error").hide();
     		$('#question').val("");
-			var publication = client.publish('/post', {post : postVal, user : userVal});
-    	}
+			  var postPublication = client.publish('/post', {post : postVal, user : userVal});
+    	  //postID++;
+      }
+    //maxlength 100 characters al defined in index.jade  
 
 	}); //einde van post button onclick
 
 	//on click van vraag, maak groter
+  $('.vote').on('click', function()
+  {
+      var voteParent = this.parent();
+      console.log("clicked");
+
+      //GAAT NI, WANT DN VOTE DIE GWN ALLE MSGES, TOCH NOG MET ID WERKEN
+
+      //var votePublication = client.publish('/vote', {vote : voteParent});
+  });
 
 });
