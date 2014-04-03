@@ -1,5 +1,5 @@
-webtech2-bestrepositoryeu
-=========================
+Webtechnology Labs
+==================
 
 Webtechnology labo solutions for 2IMD by Tom De Moor
 
@@ -15,6 +15,8 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 
 <dl>
   <dd>In this lesson I had my first experience working with GIT. The syntax, the commands, the right workflow, etc. I've learned it's an easy way to share code with others and to analyse your own workflow. By being able to view all changes it's easy to fall back on a previous version of a project.</dd>
+
+  <dd>[Link to labo](https://github.com/LiesbethVanaerschot/labo)</dd>
 </dl>
   
 ##### Lab Notes
@@ -42,6 +44,48 @@ Command | Description
 * * *
 
 ### Labo 2: Mastering CSS animations and transformations ###
+
+##### Challenge
+
+<dl>
+  <dd>This is an individual exercise. We got a workshop of what we can do with CSS3 animations which we afterwards had to implement in our own work. We had to build 2 webpages with the focus on the animations shown in the example and make them as close as possible to the original.</dd>
+</dl>
+
+##### What I've Learned
+
+<dl>
+  <dd>Everything about animations, transitions, transformations and translates. What to use when and what do they mean. I've learned you realy have to know what you are doing to make them work and use them accordingly. Use the right vendor prefixes for the right browsers.</dd>
+</dl>
+
+##### Lab Notes
+
+* **Translates**: Used in transformations. It's a method to move an element from its current position depending on the parameters given for the left (X-axis) and the top (Y-axis) position. 
+⋅⋅* ```CSS
+	   transform: translate(50px,100px);
+	   ``` 
+* **Transformations**: Physically change the the look of an element. Use tags like scale(), rotate(), skew(),… They can be 2D and 3D.
+⋅⋅* ```CSS
+	   transform: scale(2.2) translate(200px, 100px) skew(10deg) rotate(45deg);
+	   ``` 
+* **Transitions**: Needs to be triggered. Go from point A to B. Always be formal about which properties you want to animate.
+⋅⋅* ```CSS
+	   transition: width 2s;
+	   ``` 
+* **Animations**: Go from A over B, C, D, etc to Z via keyframes. They can loop and start automatically. They will call a transform for each keyframe.
+⋅⋅* ```CSS
+	   .automatic
+		{
+		-webkit-animation: moveIt 2s infinite;
+		}
+		
+		@-webkit-keyframes moveIt
+		{!
+		0% { }
+		25% { -webkit-transform: rotate(45deg);}
+		50% { left:50%; top: 50%; -webkit-transform: scale(2.5) rotate(45deg);}
+		100% { -webkit-transform: rotate(0deg);}
+		}
+		``` 
 
 ### Labo 3: Advanced JS part 1 ###
 
