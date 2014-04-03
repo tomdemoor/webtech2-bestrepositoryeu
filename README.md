@@ -105,7 +105,7 @@ Command | Description
 
 ##### Lab Notes
 
-**Must Read Articles**
+*Must Read Articles*
 
 * [Introduction to Object Oriented Javascript (great help)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
 * [Learn and understand advanced Javascript code](http://ejohn.org/apps/learn/)
@@ -129,7 +129,7 @@ Command | Description
 
 ##### Lab Notes
 
-**Must Read Articles**
+*Must Read Articles*
 
 * The best scource was the help from our teacher and slowly build up the app.
 * [How to design your app](http://insideintercom.io/the-dribbblisation-of-design/)
@@ -140,8 +140,55 @@ Command | Description
 
 * * *
 
-### Labo 5: Terrappke: continuing with app prototypes ###
+### Labo 5: Terrappke - continuing with app prototypes ###
+
+##### Challenge
+
+<dl>
+  <dd>We've now learned to build web app prototypes. Buid an app the teacher proposed or pitch your own idea. Work alone or in group.</dd>
+
+  <dd>I've chosen to work with a classmate. We worked on our teachers app idea. Building an extension for the weather app regarding engaging new students to come to our school, have a drink outside if the weather is nice with teachers and talk about the education.</dd>
+</dl>
+
+##### What I've Learned
+
+<dl>
+  <dd>We've combined everything we have learned this course to build a prototype. We have done a great job building it so our app will be chosen for our schools campaign. I am very proud of my teammate and myself.</dd>
+
+  <dd>Working more, consistent and harder gets you places.</dd>
+</dl>
+
+* * *
 
 ### Labo 6: Node.js ###
 
+##### Challenge
 
+<dl>
+  <dd>Build an app that allows anyone in the chatroom to ask a short question. All users can see the questions and vote on them. Voting will enlargen the question. We could also make our own variant as long as the idea was the same. I have made the question app but within a facebook setting. For the layout I have chosen a 90s design.</dd>
+</dl>
+
+##### What I've Learned
+
+<dl>
+  <dd>Having fun building an app gets you a long way. My personal design made it much more fun. It's a bit more code but I'm here to learn so, this is not a bad thing.</dd>
+
+  <dd>I've learned to work with node.js and faye (websockets). This class was very interesting and I feel like a developer more and more with every lab.</dd>
+</dl>
+
+##### Lab Notes
+
+<dl>
+  <dd>Install node.js, express, nodemon. Use the terminal.</dd>
+</dl>
+
+*Must Read Articles*
+
+* [VIDEO: What is node.js all about](http://www.sitepoint.com/whats-node-js-all-about/)
+* [An example building an app with node.js code explained](http://www.goodbytes.be/blog/article/building-a-multiplayer-game-iphone-controlled-with-nodejs-socket-canvas)
+* [A node.js guide: free beginner book](http://www.nodebeginner.org/)
+* [What is node.js and understanding it](http://blog.envylabs.com/post/50589070360/understanding-node-js)
+* [Another app example: drawing game](http://tutorialzine.com/2012/08/nodejs-drawing-game/)
+* [What is node.js: Pros and Cons, Modules, FaQ](http://stackoverflow.com/questions/1884724/what-is-node-js)
+
+* * *
