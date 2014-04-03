@@ -60,19 +60,19 @@ Command | Description
 ##### Lab Notes
 
 * **Translates**: Used in transformations. It's a method to move an element from its current position depending on the parameters given for the left (X-axis) and the top (Y-axis) position. 
-⋅⋅* ```CSS
+	```CSS
 	   transform: translate(50px,100px);
 	   ``` 
 * **Transformations**: Physically change the the look of an element. Use tags like scale(), rotate(), skew(),… They can be 2D and 3D.
-⋅⋅* ```CSS
+	```CSS
 	   transform: scale(2.2) translate(200px, 100px) skew(10deg) rotate(45deg);
 	   ``` 
 * **Transitions**: Needs to be triggered. Go from point A to B. Always be formal about which properties you want to animate.
-⋅⋅* ```CSS
+	```CSS
 	   transition: width 2s;
 	   ``` 
 * **Animations**: Go from A over B, C, D, etc to Z via keyframes. They can loop and start automatically. They will call a transform for each keyframe.
-⋅⋅* ```CSS
+	```CSS
 	   .automatic
 		{
 		-webkit-animation: moveIt 2s infinite;
@@ -86,6 +86,7 @@ Command | Description
 		100% { -webkit-transform: rotate(0deg);}
 		}
 		``` 
+* * *
 
 ### Labo 3: Advanced JS part 1 ###
 
