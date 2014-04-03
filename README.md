@@ -15,9 +15,9 @@ Webtechnology labo solutions for 2IMD by Tom De Moor
 
 <dl>
   <dd>In this lesson I had my first experience working with GIT. The syntax, the commands, the right workflow, etc. I've learned it's an easy way to share code with others and to analyse your own workflow. By being able to view all changes it's easy to fall back on a previous version of a project.</dd>
-
-  <dd>[Link to labo](https://github.com/LiesbethVanaerschot/labo)</dd>
 </dl>
+
+[Link to labo](https://github.com/LiesbethVanaerschot/labo)
   
 ##### Lab Notes
 
@@ -85,7 +85,7 @@ Command | Description
 		50% { left:50%; top: 50%; -webkit-transform: scale(2.5) rotate(45deg);}
 		100% { -webkit-transform: rotate(0deg);}
 		}
-		``` 
+		
 
 * * *
 
@@ -100,22 +100,45 @@ Command | Description
 ##### What I've Learned
 
 <dl>
-  <dd>I've learned that you dont always need to implement jQuery in simple applications. I love to use jQuery a lot, and by making my own framework I now understand more how it is build. I've also added an extra onDoubleClick event listener</dd>
-
-  <dd>I've learned that you dont always need to implement jQuery in simple applications. I love to use jQuery a lot, and by making my own framework I now understand more how it is build. I've also added an extra onDoubleClick event listener</dd>
+  <dd>I've learned that you dont always need to implement jQuery in simple applications. I love to use jQuery a lot, and by making my own framework I now understand more how it is build. I've also added an extra onDoubleClick event listener.</dd>
 </dl>
 
 ##### Lab Notes
 
 **Must Read Articles**
 
-[Introduction to Object Oriented Javascript (great help)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
-[Learn and understand advanced Javascript code](http://ejohn.org/apps/learn/)
-[Slideshow by Robery Nyman about objects](http://www.slideshare.net/robnyman/javascript-like-a-box-of-chocolates)
+* [Introduction to Object Oriented Javascript (great help)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
+* [Learn and understand advanced Javascript code](http://ejohn.org/apps/learn/)
+* [Slideshow by Robery Nyman about objects](http://www.slideshare.net/robnyman/javascript-like-a-box-of-chocolates)
 
 * * *
 
 ### Labo 4: Building an app prototype ###
+
+##### Challenge
+
+<dl>
+  <dd>Build a full working weather app using prototyping. Use developer.forecast.io as an API, work with jsonp, geolocation, ajax calls, localstorage and prototypical inheritance.</dd>
+</dl>
+
+##### What I've Learned
+
+<dl>
+  <dd>I've learned to work with prototypical inheritance. It was a bit of a search to not work with just functions, but it's a cleaner way of coding. I have learned to work with all of the elements mentioned in the challenge. It was a very eye-opening challenge. It's my first actual application I had to build and it was very enjoyable. From this moment on I am feeling like this course is really lifting off.</dd>
+</dl>
+
+##### Lab Notes
+
+**Must Read Articles**
+
+* The best scource was the help from our teacher and slowly build up the app.
+* [How to design your app](http://insideintercom.io/the-dribbblisation-of-design/)
+* [Wiki: Same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy)
+* [Wiki: JSONP](http://en.wikipedia.org/wiki/JSONP)
+* [Stackoverflow Answer: Callbacks JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about)
+* [Local storage in HTML5](http://diveintohtml5.info/storage.html)
+
+* * *
 
 ### Labo 5: Terrappke: continuing with app prototypes ###
 
