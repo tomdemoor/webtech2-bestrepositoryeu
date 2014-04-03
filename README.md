@@ -79,16 +79,41 @@ Command | Description
 		}
 		
 		@-webkit-keyframes moveIt
-		{!
+		{
 		0% { }
 		25% { -webkit-transform: rotate(45deg);}
 		50% { left:50%; top: 50%; -webkit-transform: scale(2.5) rotate(45deg);}
 		100% { -webkit-transform: rotate(0deg);}
 		}
 		``` 
+
 * * *
 
 ### Labo 3: Advanced JS part 1 ###
+
+##### Challenge
+
+<dl>
+  <dd>Build a mini-framework for a to-do application using object-oriented techniques in Javascript. Basically we had to build your own jQuery. We have to be able to select an element by ID, class, add a class, on click with event listener, ...</dd>
+</dl>
+
+##### What I've Learned
+
+<dl>
+  <dd>I've learned that you dont always need to implement jQuery in simple applications. I love to use jQuery a lot, and by making my own framework I now understand more how it is build. I've also added an extra onDoubleClick event listener</dd>
+
+  <dd>I've learned that you dont always need to implement jQuery in simple applications. I love to use jQuery a lot, and by making my own framework I now understand more how it is build. I've also added an extra onDoubleClick event listener</dd>
+</dl>
+
+##### Lab Notes
+
+**Must Read Articles**
+
+[Introduction to Object Oriented Javascript (great help)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
+[Learn and understand advanced Javascript code](http://ejohn.org/apps/learn/)
+[Slideshow by Robery Nyman about objects](http://www.slideshare.net/robnyman/javascript-like-a-box-of-chocolates)
+
+* * *
 
 ### Labo 4: Building an app prototype ###
 
