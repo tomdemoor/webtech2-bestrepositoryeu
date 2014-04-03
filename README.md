@@ -3,13 +3,14 @@ Webtechnology Labs
 
 Webtechnology labo solutions for 2IMD by Tom De Moor
 
-* [Labo 1: GIT To Work][]
-* [Labo 2: Mastering CSS animations and transformations][]
-* [Labo 3: Advanced JS part 1][]
-* [Labo 4: Building an app prototype][]
-* [Labo 5: Terrappke - continuing with app prototypes][]
-* [Labo 6: Node.js][]
+* [Labo 1: GIT To Work](#lab1)
+* [Labo 2: Mastering CSS animations and transformations](#lab2)
+* [Labo 3: Advanced JS part 1](#lab3)
+* [Labo 4: Building an app prototype](#lab4)
+* [Labo 5: Terrappke - continuing with app prototypes](#lab5)
+* [Labo 6: Node.js](#lab6)
 
+<a name="lab1">
 ### Labo 1: GIT To Work ###
 
 ##### Challenge
@@ -50,6 +51,7 @@ Command | Description
 
 * * *
 
+<a name="lab2">
 ### Labo 2: Mastering CSS animations and transformations ###
 
 ##### Challenge
@@ -96,6 +98,7 @@ Command | Description
 
 * * *
 
+<a name="lab3">
 ### Labo 3: Advanced JS part 1 ###
 
 ##### Challenge
@@ -120,6 +123,7 @@ Command | Description
 
 * * *
 
+<a name="lab4">
 ### Labo 4: Building an app prototype ###
 
 ##### Challenge
@@ -147,6 +151,7 @@ Command | Description
 
 * * *
 
+<a name="lab6">
 ### Labo 5: Terrappke - continuing with app prototypes ###
 
 ##### Challenge
@@ -167,6 +172,7 @@ Command | Description
 
 * * *
 
+<a name="lab6">
 ### Labo 6: Node.js ###
 
 ##### Challenge
