@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  var postID = 0;
-  //var postIdCollection = [];
 
 	//client aanmaken zoals op http://faye.jcoglan.com/node/clients.html
 	var client = new Faye.Client('http://localhost:3000/faye/',{
@@ -9,11 +7,11 @@ $(document).ready(function(){
 
 	//subscribe en vraag printen http://faye.jcoglan.com/browser/subscribing.html
 	var postSubscribtion = client.subscribe('/post', function(message) {
+      //timestamp als ID
+      var timestamp = new Date().getTime();
+
   		//handle messages en voeg ID aan messages toe om ze uniek te maken
-  		var newsPost = $(".bulletin").append("<p class='newspost' id='p" + postID + "'><span class='user'>" + message.user + "</span><span class='posted'> posted:</span></br>" + message.post + "</br><div class='vote' id='v" + postID + "'>vote</div></p>")
-	    postID++;
-      //id's in array zodat we ze later kunnen gebruiken bij andere gebruikers
-      //postIdCollection.push("p" + postID);
+  		var newsPost = $(".bulletin").append("<p class='newspost' id='p" + timestamp + "'><span class='user'>" + message.user + "</span><span class='posted'> posted:</span></br>" + message.post + "</br><div class='vote' id='v" + timestamp + "'>vote</div></p>")
   });
 
   	//onclick subscribe / publish
@@ -44,7 +42,8 @@ $(document).ready(function(){
       var upVoteID = vote.index;
 
       //vote id nr post id converteren
-      var thePostID = "p"+upVoteID.charAt(1);
+      var thePostID = upVoteID.replace("v","p");
+      console.log(thePostID);
 
       //voor elke .vote gaan we overlopen of de index van de vote waar 
       //op geklikt is overeenkomt met die van de post
