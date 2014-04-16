@@ -1,0 +1,9 @@
+<% if (!user) { %>
+	<h2>IMDernational</h2>
+	<h3>Chat with people across the whole world</h3>
+	<a href="/auth/facebook">Login with Facebook</a>
+<% } else { %>
+	<h2>IMDernational</h2>
+	<h3>Chat with people across the whole world</h3>
+	<p>Hello, <%= user.username %>.</p>
+<% } %>
