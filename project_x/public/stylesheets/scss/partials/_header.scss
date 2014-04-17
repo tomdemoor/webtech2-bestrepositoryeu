@@ -1,0 +1,56 @@
+$margin-center: 0px auto;
+$color-primarytext: #323232;
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+.links
+{
+	text-decoration: none;
+	color: $color-primarytext;
+}
+
+header
+{
+  div
+  {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -26px;
+
+  	#account
+  	{
+  		@extend .links;
+
+  		padding: 0px 30px;
+  	}
+	#logout
+	{
+		@extend #account;
+	}
+  }
+  #logobig
+  {
+  	@extend .links;
+
+  	background-image: url("../assets/logos/ela_logo_small.png");
+    display: block;
+    background-size: 200px 97px;
+    width: 200px;
+	height: 97px;
+    text-indent: -9999px;
+    margin: $margin-center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+  h3
+  {
+  	text-align: center;
+  }
+  p
+  {
+  	text-align: center;
+  }
+}
