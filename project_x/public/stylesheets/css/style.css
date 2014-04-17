@@ -1,0 +1,51 @@
+body {
+  background-color: #f1f1f1;
+  color: #323232;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.links, header div #account, header div #logout, header #logobig {
+  text-decoration: none;
+  color: #323232; }
+
+header div {
+  width: 100%;
+  text-align: center;
+  margin-bottom: -26px; }
+  header div #account, header div #logout {
+    padding: 0px 30px; }
+header #logobig {
+  background-image: url("../assets/logos/ela_logo_small.png");
+  display: block;
+  background-size: 200px 97px;
+  width: 200px;
+  height: 97px;
+  text-indent: -9999px;
+  margin: 0px auto;
+  margin-top: 70px;
+  margin-bottom: 50px; }
+header h3 {
+  text-align: center; }
+header p {
+  text-align: center; }
+
+.bigbutton, #login a {
+  background-color: #0d9fbe;
+  width: 200px;
+  padding: 30px;
+  color: white;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  margin-top: 70px; }
+
+#login p {
+  color: #0dbebe;
+  text-align: center;
+  margin-bottom: -34px; }
