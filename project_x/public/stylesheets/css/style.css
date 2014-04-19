@@ -21,7 +21,7 @@ header #logobig {
   height: 97px;
   text-indent: -9999px;
   margin: 0px auto;
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 50px; }
 header h3 {
   text-align: center; }
@@ -30,20 +30,23 @@ header p {
 
 .bigbutton, #login a {
   background-color: #0d9fbe;
-  width: 200px;
-  padding: 30px;
+  width: 120px;
+  height: 120px;
   color: white;
   display: block;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
   font-size: 11px;
   font-size: 1.1rem;
   margin: 0 auto;
-  margin-top: 70px; }
+  margin-top: 30px;
+  border: 1px solid #0dbebe; }
+  .bigbutton a, #login a a {
+    vertical-align: bottom; }
 
 #login p {
   color: #0dbebe;
