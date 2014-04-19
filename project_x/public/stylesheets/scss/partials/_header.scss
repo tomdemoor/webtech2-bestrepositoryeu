@@ -14,36 +14,44 @@ $color-primarytext: #323232;
 
 header
 {
-  div
+  ul
   {
     width: 100%;
-    text-align: center;
-    margin-bottom: -26px;
+    margin-left:-48px;
+    margin-top:-16px;
 
-  	#account
+  	li
   	{
-  		@extend .links;
+      a
+      {
+        @extend .links;
 
-  		padding: 0px 30px;
+        height: 21px;
+        padding: 0 10px;
+      }
+      #logout
+      {
+        float:right;
+      }
+      width: 50%;
+      float:left;
+      list-style-type: none;
+      background-color: red;
   	}
-	#logout
-	{
-		@extend #account;
-	}
   }
   #logobig
   {
-  	@extend .links;
-
   	background-image: url("../assets/logos/ela_logo_small.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
     display: block;
     background-size: 200px 97px;
     width: 200px;
 	  height: 97px;
     text-indent: -9999px;
     margin: $margin-center;
-    margin-top: 50px;
     margin-bottom: 50px;
+    padding-bottom: 50px;
   }
   h3
   {
