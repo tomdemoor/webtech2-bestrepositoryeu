@@ -3,26 +3,36 @@ body {
   color: #323232;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.links, header div #account, header div #logout, header #logobig {
+.links, header ul li a {
   text-decoration: none;
   color: #323232; }
 
-header div {
+header ul {
   width: 100%;
-  text-align: center;
-  margin-bottom: -26px; }
-  header div #account, header div #logout {
-    padding: 0px 30px; }
+  margin-left: -48px;
+  margin-top: -16px; }
+  header ul li {
+    width: 50%;
+    float: left;
+    list-style-type: none;
+    background-color: red; }
+    header ul li a {
+      height: 21px;
+      padding: 0 10px; }
+    header ul li #logout {
+      float: right; }
 header #logobig {
   background-image: url("../assets/logos/ela_logo_small.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
   display: block;
   background-size: 200px 97px;
   width: 200px;
   height: 97px;
   text-indent: -9999px;
   margin: 0px auto;
-  margin-top: 50px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  padding-bottom: 50px; }
 header h3 {
   text-align: center; }
 header p {
@@ -31,7 +41,7 @@ header p {
 .bigbutton, #login a {
   background-color: #0d9fbe;
   width: 120px;
-  height: 120px;
+  height: 85px;
   color: white;
   display: block;
   text-decoration: none;
@@ -44,11 +54,9 @@ header p {
   font-size: 1.1rem;
   margin: 0 auto;
   margin-top: 30px;
-  border: 1px solid #0dbebe; }
-  .bigbutton a, #login a a {
-    vertical-align: bottom; }
+  border: 2px solid #0dbebe;
+  padding-top: 35px; }
 
-#login p {
-  color: #0dbebe;
-  text-align: center;
-  margin-bottom: -34px; }
+.bigbutton:hover, #login a:hover {
+  background-color: #0dbebe;
+  border: 2px solid #0d9fbe; }
