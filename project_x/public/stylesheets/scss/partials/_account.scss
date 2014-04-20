@@ -1,0 +1,26 @@
+$color-BG: #323232;
+$color-txt: #f1f1f1;
+
+#profile
+{
+	position: absolute;
+	width:80%;
+	left: -80%;
+	height: 100%;
+	background-color: $color-BG;
+	color: $color-txt;
+	top:0;
+	display:none;
+}
+
+.nav-animation
+{
+	margin-left: 80%;
+}
+
+.site-container-animation
+{
+	left: 80%;
+	position:absolute;
+	width: 100%;
+}
