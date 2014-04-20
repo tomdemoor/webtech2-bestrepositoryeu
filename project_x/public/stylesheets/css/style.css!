@@ -10,17 +10,17 @@ body {
 header ul {
   width: 100%;
   margin-left: -48px;
-  margin-top: -9px; }
+  margin-top: -16px;
+  background-color: blue; }
   header ul li {
     width: 50%;
     float: left;
     list-style-type: none; }
     header ul li a {
       height: 21px;
-      padding: 0 20px; }
+      padding: 0 10px; }
     header ul li #logout {
-      float: right;
-      padding: 0 2px; }
+      float: right; }
 header #logobig {
   background-image: url("../assets/logos/ela_logo_small.png");
   background-position: center bottom;
@@ -60,21 +60,3 @@ header p {
 .bigbutton:hover, #login a:hover {
   background-color: #0dbebe;
   border: 2px solid #0d9fbe; }
-
-#profile {
-  position: absolute;
-  width: 80%;
-  left: -80%;
-  height: 100%;
-  background-color: #323232;
-  color: #f1f1f1;
-  top: 0;
-  display: none; }
-
-.nav-animation {
-  margin-left: 80%; }
-
-.site-container-animation {
-  left: 80%;
-  position: absolute;
-  width: 100%; }

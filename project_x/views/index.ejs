@@ -13,7 +13,6 @@
 
 <body>	
 <% if (!user) { %>
-<div="container">
 	<header>
 		<a href="" id="logobig">Ela</a>
 		<h3>Chat with people across the world</h3>
@@ -23,14 +22,18 @@
 	<div id="login">
 		<a href="/auth/facebook">Login with Facebook</a>
 	</div>
-</div>
 <% } else { %>
-<div="container">
+<div class="site-container">
+	<div id="profile">
+		<p>ID: <%= user.id %></p>
+		<p>Name: <%= user.displayName %></p>
+	</div>
+
 	<header>
 		<nav>
 		<ul>
 			<li>
-				<a href="/account" id="account">&#9776;</a>	
+				<a href="" id="account">&#9776;</a>	
 			</li>
 			<li>
 				<a href="/logout" id="logout">Log Out</a>	
@@ -49,5 +52,10 @@
 	</div>
 </div>
 <% } %>
+
+
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script src="/javascripts/script.js" type="text/javascript"></script>
+<script src="/javascripts/faye/browser/faye-browser.js" type="text/javascript"></script>
 </body>
 </html>
