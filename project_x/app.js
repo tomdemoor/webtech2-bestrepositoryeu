@@ -34,7 +34,8 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    profileFields: ['id','displayName','photos']
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
@@ -76,12 +77,8 @@ app.get('/', function(req, res){
   res.render('index', { user: req.user });
 });
 
-app.get('/account', ensureAuthenticated, function(req, res){
-  res.render('account', { user: req.user });
-});
-
-app.get('/login', function(req, res){
-  res.render('login', { user: req.user });
+app.get('/selectcountry', ensureAuthenticated, function(req, res){
+  res.render('selectcountry', { user: req.user });
 });
 
 // GET /auth/facebook
@@ -102,7 +99,7 @@ app.get('/auth/facebook',
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
 app.get('/auth/facebook/callback', 
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
     res.redirect('/');
   });
@@ -131,7 +128,7 @@ server.listen(3000);
 //   login page.
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login')
+  res.redirect('/')
 }
 
 /*mongoose*/

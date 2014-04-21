@@ -1,26 +1,49 @@
+@import 'partials/loginscreen';
+
 $color-BG: #323232;
 $color-txt: #f1f1f1;
 
 #profile
 {
 	position: absolute;
-	width:80%;
-	left: -80%;
+	width:90%;
+	left: -90%;
 	height: 100%;
 	background-color: $color-BG;
 	color: $color-txt;
 	top:0;
 	display:none;
+
+	#profcontainer
+	{
+		width: 80%;
+		margin: $margin-center;
+
+		p
+		{
+			padding: 10px 0px;
+			border-bottom: 1px solid black;
+		}
+
+		#profilepic
+		{
+			@extend .bigbutton;
+
+			padding-top: 0px;
+			height: 120px;
+			margin-top: 100px;
+		}
+	}
 }
 
 .nav-animation
 {
-	margin-left: 80%;
+	margin-left: 90%;
 }
 
 .site-container-animation
 {
-	left: 80%;
+	left: 90%;
 	position:absolute;
 	width: 100%;
 }
