@@ -23,17 +23,25 @@
 		<a href="/auth/facebook">Login with Facebook</a>
 	</div>
 <% } else { %>
-<div class="site-container">
+
 	<div id="profile">
-		<p>ID: <%= user.id %></p>
-		<p>Name: <%= user.displayName %></p>
+		<div id="profcontainer">
+			<h3>Your user profile</h3>
+			<p>Your ID: <%= user.id %></p>
+			<p>Name: <%= user.displayName %></p>
+			<p>Location: GeoFunction</p>
+			<figure>
+				<img src="https://graph.facebook.com/<%= user.id %>/picture?type=large" alt="" id="profilepic">
+			</figure>
+		</div>
 	</div>
 
+<div class="site-container">
 	<header>
 		<nav>
 		<ul>
 			<li>
-				<a href="" id="account">&#9776;</a>	
+				<a href="#" id="account">&#9776;</a>
 			</li>
 			<li>
 				<a href="/logout" id="logout">Log Out</a>	

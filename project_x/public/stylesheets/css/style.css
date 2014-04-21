@@ -3,14 +3,14 @@ body {
   color: #323232;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.links, header ul li a {
+.links, header ul li a, #connectme a {
   text-decoration: none;
   color: #323232; }
 
 header ul {
   width: 100%;
   margin-left: -48px;
-  margin-top: -9px; }
+  margin-top: -8px; }
   header ul li {
     width: 50%;
     float: left;
@@ -21,6 +21,16 @@ header ul {
     header ul li #logout {
       float: right;
       padding: 0 2px; }
+    header ul li #logosmall {
+      background-image: url("../assets/logos/ela_thumb.png");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      text-indent: -9999px;
+      margin-left: 70px;
+      margin-top: -20px; }
 header #logobig {
   background-image: url("../assets/logos/ela_logo_small.png");
   background-position: center bottom;
@@ -38,7 +48,7 @@ header h3 {
 header p {
   text-align: center; }
 
-.bigbutton, #login a {
+.bigbutton, #login a, #connectme a, #profile #profcontainer #profilepic {
   background-color: #0d9fbe;
   width: 120px;
   height: 85px;
@@ -57,24 +67,137 @@ header p {
   border: 2px solid #0dbebe;
   padding-top: 35px; }
 
-.bigbutton:hover, #login a:hover {
+.bigbutton:hover, #login a:hover, #connectme a:hover, #profile #profcontainer #profilepic:hover {
+  background-color: #0dbebe;
+  border: 2px solid #0d9fbe; }
+
+.bigbutton, #login a, #connectme a, #profile #profcontainer #profilepic {
+  background-color: #0d9fbe;
+  width: 120px;
+  height: 85px;
+  color: white;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+  font-size: 11px;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 2px solid #0dbebe;
+  padding-top: 35px; }
+
+.bigbutton:hover, #login a:hover, #connectme a:hover, #profile #profcontainer #profilepic:hover {
+  background-color: #0dbebe;
+  border: 2px solid #0d9fbe; }
+
+.links, header ul li a, #connectme a {
+  text-decoration: none;
+  color: #323232; }
+
+header ul {
+  width: 100%;
+  margin-left: -48px;
+  margin-top: -8px; }
+  header ul li {
+    width: 50%;
+    float: left;
+    list-style-type: none; }
+    header ul li a {
+      height: 21px;
+      padding: 0 20px; }
+    header ul li #logout {
+      float: right;
+      padding: 0 2px; }
+    header ul li #logosmall {
+      background-image: url("../assets/logos/ela_thumb.png");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      text-indent: -9999px;
+      margin-left: 70px;
+      margin-top: -20px; }
+header #logobig {
+  background-image: url("../assets/logos/ela_logo_small.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: block;
+  background-size: 200px 97px;
+  width: 200px;
+  height: 97px;
+  text-indent: -9999px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  padding-bottom: 50px; }
+header h3 {
+  text-align: center; }
+header p {
+  text-align: center; }
+
+#countrywrap {
+  margin: 0px auto;
+  padding-top: 40px;
+  text-align: center; }
+  #countrywrap #countries {
+    width: 90%; }
+
+#connectme {
+  margin-top: 167px; }
+  #connectme a {
+    color: white; }
+
+.bigbutton, #login a, #connectme a, #profile #profcontainer #profilepic {
+  background-color: #0d9fbe;
+  width: 120px;
+  height: 85px;
+  color: white;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  border-radius: 60px;
+  font-size: 11px;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 2px solid #0dbebe;
+  padding-top: 35px; }
+
+.bigbutton:hover, #login a:hover, #connectme a:hover, #profile #profcontainer #profilepic:hover {
   background-color: #0dbebe;
   border: 2px solid #0d9fbe; }
 
 #profile {
   position: absolute;
-  width: 80%;
-  left: -80%;
+  width: 90%;
+  left: -90%;
   height: 100%;
   background-color: #323232;
   color: #f1f1f1;
   top: 0;
   display: none; }
+  #profile #profcontainer {
+    width: 80%;
+    margin: 0 auto; }
+    #profile #profcontainer p {
+      padding: 10px 0px;
+      border-bottom: 1px solid black; }
+    #profile #profcontainer #profilepic {
+      padding-top: 0px;
+      height: 120px;
+      margin-top: 100px; }
 
 .nav-animation {
-  margin-left: 80%; }
+  margin-left: 90%; }
 
 .site-container-animation {
-  left: 80%;
+  left: 90%;
   position: absolute;
   width: 100%; }

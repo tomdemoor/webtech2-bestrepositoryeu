@@ -1,5 +1,5 @@
 //Javascript with Jquery Plugin
-console.log(rddy);
+//general javascript functions
 
 $(document).ready(function(){
 
@@ -7,21 +7,19 @@ $(document).ready(function(){
 	var toggleNav = false;
 	$('#account').on("click",function(){
 		if(toggleNav === false){
-			/*$("#profile").show();
+			$("#profile").show();
 			$("#profile").addClass("nav-animation");
-			$(".site-container").addClass("site-container-animation");*/
+			$(".site-container").addClass("site-container-animation");
 			toggleNav = true;
-			console.log(toggleNav);
 		}else{
-			/*$("#profile").hide();
+			$("#profile").hide();
 			$(".site-container").removeClass("site-container-animation");
-			$("#profile").removeClass("nav-animation");*/
+			$("#profile").removeClass("nav-animation");
 			toggleNav = false;
-			console.log(toggleNav);
 		}
 	});
 
-	/*$('#profile').on("click",function(){
+	$('#profile').on("click",function(){
 		if(toggleNav === false){
 			$(this).show();
 			$(this).addClass("nav-animation");
@@ -33,6 +31,6 @@ $(document).ready(function(){
 			$(this).removeClass("nav-animation");
 			toggleNav = false;
 		}
-	});	*/
-
+	});
+	//nextJQfunction
 });

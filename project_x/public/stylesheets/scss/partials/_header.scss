@@ -18,7 +18,7 @@ header
   {
     width: 100%;
     margin-left:-48px;
-    margin-top:-9px;
+    margin-top:-8px;
 
   	li
   	{
@@ -33,6 +33,18 @@ header
       {
         float:right;
         padding: 0 2px;
+      }
+      #logosmall
+      {
+        background-image: url("../assets/logos/ela_thumb.png");
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+        display: block;
+        text-indent: -9999px;
+        margin-left: 70px;
+        margin-top: -20px;
       }
 
       width: 50%;
