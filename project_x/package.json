@@ -1,5 +1,5 @@
 {
-  "name": "IMDernational",
+  "name": "Ela",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,6 +12,14 @@
     "ejs": ">= 0.0.0",
     "mongoose": "^3.8.3",
     "passport-facebook": "^1.0.2",
-    "passport": "^0.1.18"
+    "passport": "^0.1.18",
+    "imagemin-pngcrush": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-minify-css": "^0.3.1",
+    "gulp-concat-css": "^0.1.4",
+    "gulp-imagemin": "^0.4.0",
+    "imagemin-pngcrush": "^0.1.0"
   }
 }
