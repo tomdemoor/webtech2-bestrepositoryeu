@@ -5,7 +5,6 @@ var express = require('express')
   , faye = require('faye')
   , mongoose = require('mongoose')
   , passport = require('passport')
-  , util = require('util')
   , FacebookStrategy = require('passport-facebook').Strategy;
 
 var FACEBOOK_APP_ID = "488287867965014"
