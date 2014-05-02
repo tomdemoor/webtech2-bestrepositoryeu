@@ -80,6 +80,10 @@ app.get('/selectcountry', ensureAuthenticated, function(req, res){
   res.render('selectcountry', { user: req.user });
 });
 
+app.get('/chat', ensureAuthenticated, function(req, res){
+  res.render('chat', { user: req.user });
+});
+
 // GET /auth/facebook
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  The first step in Facebook authentication will involve

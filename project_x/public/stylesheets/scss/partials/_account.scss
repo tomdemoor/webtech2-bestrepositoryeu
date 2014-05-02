@@ -30,8 +30,14 @@ $color-txt: #f1f1f1;
 			@extend .bigbutton;
 
 			padding-top: 0px;
+			width: 120px;
 			height: 120px;
-			margin-top: 100px;
+			margin-top: 105px;
+
+			img
+			{
+
+			}
 		}
 	}
 }
@@ -44,6 +50,7 @@ $color-txt: #f1f1f1;
 .site-container-animation
 {
 	left: 90%;
+	overflow: hidden;
 	position:absolute;
 	width: 100%;
 }
