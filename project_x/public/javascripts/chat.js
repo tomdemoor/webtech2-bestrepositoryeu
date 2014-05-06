@@ -66,16 +66,39 @@ $(document).ready(function(){
       }
     });
 
+    /*http://faye.jcoglan.com/browser/extensions.html*/
+    /*http://faye.jcoglan.com/node.html*/
+    /*http://faye.jcoglan.com/node/extensions.html*/
+
+    Logger = {
+
+    }
+     
+    client.addExtension(Logger);
+
+    /*Logger = {
+      incoming: function(message, callback) {
+        console.log('incoming', message);
+        callback(message);
+      },
+      outgoing: function(message, callback) {
+        console.log('outgoing', message);
+        callback(message);
+      }
+    };
+
+    client.addExtension(Logger);*/
+
     /*var userDC = client.subscribe('/userdc', function(message) {
       //timestamp als ID
       var timestamp = new Date().getTime();
 
       //handle messages en voeg ID aan messages toe om ze uniek te maken
       $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + message.user + " has disconnected." + "</br></p></div>")
-    });
+    });   */
 
-    $(window).on('beforeunload', function (e) {
-      var userVal = $('#userName').text();
+    /*$(window).on('beforeunload', function (e) {
+      
       var postVal = "";
 
       var userDCpub = client.publish('/userdc', {user : userVal});
@@ -86,7 +109,45 @@ $(document).ready(function(){
         async: false
       });
     });*/
+    
+    /*WRM GGAAT DEES NI*/
+
+    /*var userDC = client.subscribe('/userdc', function(message) {
+      //timestamp als ID
+      var timestamp = new Date().getTime();
+
+      //handle messages en voeg ID aan messages toe om ze uniek te maken
+      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + message.user + " left the conversation." + "</br></p></div>");
+    });
   
+
+    $(window).on('beforeunload', function () {
+      var userVal = $('#userName').text();
+
+      var userDCpub = client.publish('/userdc', {user : userVal});
+
+      return "ehe";
+    });*/
+
+//$(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + userVal + " has disconnected." + "</br></p></div>");
+
+    /*client.bind('transport:down', function() {
+    // Fires when the connection is lost
+      var userVal = $('#userName').text();
+
+      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + userVal + " has disconnected." + "</br></p></div>");
+
+    });*/
+
+    /*var ServerDC = {
+      incoming: function(message, callback) {
+      if(message.channel === '/meta/disconnect') {
+        var userVal = $('#userName').text();
+         $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + userVal + " has disconnected." + "</br></p></div>");
+      }
+    }
+
+    client.addExtension(ServerDC);*/
 
     //onclick translate
 });

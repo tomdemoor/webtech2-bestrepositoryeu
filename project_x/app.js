@@ -3,6 +3,7 @@ var express = require('express')
   , user = require('./routes/user')
   , routes = require('./routes')
   , faye = require('faye')
+  , WebSocket = require('faye-websocket')
   , mongoose = require('mongoose')
   , passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy;
@@ -119,6 +120,10 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 });
 
 var bayeux = new faye.NodeAdapter({mount: '/faye', timeout: 45});
+
+bayeux.on('disconnect', function(clientId) {
+  console.log( clientId + " disconnected");
+});
 
 bayeux.attach(server);
 server.listen(3000);
