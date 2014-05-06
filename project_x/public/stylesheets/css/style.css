@@ -189,7 +189,15 @@ header p {
     -ms-border-radius: 60px;
     border-radius: 60px;
     border: 2px solid #0dbebe;
-    top: 0; }
+    top: 0;
+    -webkit-animation: post 1s;
+    -ms-animation: post 1s;
+    animation: post 1s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
   .bulletin .chatpost {
     width: 75.8%;
     background-color: white;
@@ -199,8 +207,24 @@ header p {
     margin-top: 0px;
     margin-left: 10px;
     padding: 8px 0px;
-    padding-left: 10px; }
+    padding-left: 10px;
+    -webkit-animation: post 1s;
+    -ms-animation: post 1s;
+    animation: post 1s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
 
+@-webkit-keyframes post {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px); } }
 .sendbox {
   width: 95%; }
   .sendbox #send {
@@ -252,8 +276,7 @@ header p {
   height: 100%;
   background-color: #323232;
   color: #f1f1f1;
-  top: 0;
-  display: none; }
+  top: 0; }
   #profile #profcontainer {
     width: 80%;
     margin: 0 auto; }
@@ -264,13 +287,97 @@ header p {
       padding-top: 0px;
       width: 120px;
       height: 120px;
-      margin-top: 105px; }
+      margin-top: 105px;
+      -webkit-transition-duration: 0.8s;
+      -moz-transition-duration: 0.8s;
+      -o-transition-duration: 0.8s;
+      transition-duration: 0.8s;
+      -webkit-transition-property: -webkit-transform;
+      -moz-transition-property: -moz-transform;
+      -o-transition-property: -o-transform;
+      transition-property: transform;
+      overflow: hidden; }
+    #profile #profcontainer #profilepic:hover {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -o-transform: rotate(360deg); }
 
 .nav-animation {
-  margin-left: 90%; }
+  -webkit-animation: nav-animation 1s;
+  -ms-animation: nav-animation 1s;
+  animation: nav-animation 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
 
+@-webkit-keyframes nav-animation {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%); } }
+@-webkit-keyframes site-container-animation {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+
+  100% {
+    -webkit-transform: translateX(93%);
+    -ms-transform: translateX(93%);
+    transform: translateX(93%); } }
 .site-container-animation {
-  left: 90%;
-  overflow: hidden;
-  position: absolute;
-  width: 100%; }
+  -webkit-animation: site-container-animation 1s;
+  -ms-animation: site-container-animation 1s;
+  animation: site-container-animation 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.nav-animation-back {
+  -webkit-animation: nav-animation-back 1s;
+  -ms-animation: nav-animation-back  1s;
+  animation: nav-animation-back  1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes nav-animation-back {
+  0% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%); }
+
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); } }
+@-webkit-keyframes site-container-animation-back {
+  0% {
+    -webkit-transform: translateX(93%);
+    -ms-transform: translateX(93%);
+    transform: translateX(93%); }
+
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); } }
+.site-container-animation-back {
+  -webkit-animation: site-container-animation-back 1s;
+  -ms-animation: site-container-animation-back 1s;
+  animation: site-container-animation-back 1s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }

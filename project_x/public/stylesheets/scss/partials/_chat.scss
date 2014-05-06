@@ -16,6 +16,12 @@
 		@include border-radius(60px);
 		border: 2px solid $color-border;
 		top: 0;
+
+		-webkit-animation: post 1s;
+		-ms-animation: post 1s;
+		animation: post 1s;
+
+		@include animation-fill(forwards);
 	}
 
 	.chatpost
@@ -30,7 +36,26 @@
 		
 		padding: 8px 0px;
 		padding-left: 10px;
+
+		-webkit-animation: post 1s;
+		-ms-animation: post 1s;
+		animation: post 1s;
+
+		@include animation-fill(forwards);
 	}
+}
+
+@-webkit-keyframes post
+{
+	0% {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+   	   } 
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
 }
 
 .sendbox

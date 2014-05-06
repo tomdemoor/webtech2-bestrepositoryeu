@@ -3,11 +3,11 @@ $(document).ready(function(){
   //getUSERID
   var userID = $('#userID').text();
 
-    //userpic
-    var userPIC = '<img src="https://graph.facebook.com/' + userID + '/picture" alt="" class="chatPIC">';
-    var elaPIC = '<img src="../stylesheets/assets/logos/ela_thumb.png" alt="" class="chatPIC">';
+  //userpic & bot pic
+  var userPIC = '<img src="https://graph.facebook.com/' + userID + '/picture" alt="" class="chatPIC">';
+  var elaPIC = '<img src="../stylesheets/assets/logos/ela_thumb.png" alt="" class="chatPIC">';
 
-  //DEFAULT
+  //DEFAULT: BOT PRESENCE IN CHAT
   $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + "A user has been found!" + "</br></p></div>")
 
 	//client aanmaken zoals op http://faye.jcoglan.com/node/clients.html
@@ -26,14 +26,13 @@ $(document).ready(function(){
 
   	//onclick subscribe / publish
     $('#send').on('click', function(){
-  			//haal values op
+  			//haal values op voor publish
   			var userVal = $('#userName').text();
   			var postVal = $('#message').val();
 
 		//als velden leeg zijn, error kleur
 		if(postVal === "" )
     	{
-
     		$('#message').css("border-color", "red");
     	}
     	else
@@ -54,7 +53,6 @@ $(document).ready(function(){
       //als velden leeg zijn, error kleur
         if(postVal === "" )
         {
-
           $('#message').css("border-color", "red");
         }
         else
@@ -69,85 +67,50 @@ $(document).ready(function(){
     /*http://faye.jcoglan.com/browser/extensions.html*/
     /*http://faye.jcoglan.com/node.html*/
     /*http://faye.jcoglan.com/node/extensions.html*/
+    /*https://groups.google.com/forum/#!topic/faye-users/EQwzcs2swY8*/
 
-    Logger = {
+    /*USER CONNECTS: FAYE PUBLISHES MESSAGE*/
 
-    }
-     
-    client.addExtension(Logger);
-
-    /*Logger = {
-      incoming: function(message, callback) {
-        console.log('incoming', message);
-        callback(message);
-      },
-      outgoing: function(message, callback) {
-        console.log('outgoing', message);
-        callback(message);
-      }
-    };
-
-    client.addExtension(Logger);*/
-
-    /*var userDC = client.subscribe('/userdc', function(message) {
+    var userConnect = client.subscribe('/userconnect', function(message) {
       //timestamp als ID
       var timestamp = new Date().getTime();
 
       //handle messages en voeg ID aan messages toe om ze uniek te maken
-      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + message.user + " has disconnected." + "</br></p></div>")
-    });   */
+      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + message.user + " has entered the chatroom." + "</br></p></div>");
+    }); 
 
-    /*$(window).on('beforeunload', function (e) {
-      
-      var postVal = "";
-
-      var userDCpub = client.publish('/userdc', {user : userVal});
-
-      $.ajax({
-        url: "/",
-        type: "GET",
-        async: false
-      });
-    });*/
-    
-    /*WRM GGAAT DEES NI*/
-
-    /*var userDC = client.subscribe('/userdc', function(message) {
-      //timestamp als ID
-      var timestamp = new Date().getTime();
-
-      //handle messages en voeg ID aan messages toe om ze uniek te maken
-      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + message.user + " left the conversation." + "</br></p></div>");
-    });
-  
-
-    $(window).on('beforeunload', function () {
-      var userVal = $('#userName').text();
-
-      var userDCpub = client.publish('/userdc', {user : userVal});
-
-      return "ehe";
-    });*/
-
-//$(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + userVal + " has disconnected." + "</br></p></div>");
-
-    /*client.bind('transport:down', function() {
-    // Fires when the connection is lost
-      var userVal = $('#userName').text();
-
-      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + userVal + " has disconnected." + "</br></p></div>");
-
-    });*/
-
-    /*var ServerDC = {
-      incoming: function(message, callback) {
-      if(message.channel === '/meta/disconnect') {
+    client.addExtension({
+    incoming: function(message, callback) {
+      if (message.channel === '/meta/handshake') {
         var userVal = $('#userName').text();
-         $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + userVal + " has disconnected." + "</br></p></div>");
+        var userConnectPublish = client.publish('/userconnect', {user : userVal});
       }
-    }
+      callback(message);
+      }
+    });
 
-    client.addExtension(ServerDC);*/
+    /*USER DISCONNECTS: FAYE PUBLISH MESSAGE*/
 
-    //onclick translate
+    var userConnect = client.subscribe('/userdisconnect', function(message) {
+      //timestamp als ID
+      var timestamp = new Date().getTime();
+
+      //handle messages en voeg ID aan messages toe om ze uniek te maken
+      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost' id='p'><span class='user'>Ela bot: </span>" + message.user + " has left the chatroom." + "</br></p></div>");
+    }); 
+
+    client.addExtension({
+    incoming: function(message, callback) {
+      if (message.channel === '/meta/disconnect') {
+        var userVal = $('#userName').text();
+        var userConnectPublish = client.publish('/userdisconnect', {user : userVal});
+        //publish duurt te lang wanneer we wegnavigeren voor het script op uit te voeren?
+        //omdat die al dc'd is kan die geen messages meer studern?
+
+        //hij kan wel console doen en alerten want das ni me faye
+        console.log("unsub");
+      }
+      callback(message);
+      }
+    });
 });

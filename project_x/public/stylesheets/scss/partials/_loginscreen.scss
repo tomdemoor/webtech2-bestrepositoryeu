@@ -9,6 +9,14 @@ $margin-center: 0 auto;
  border-radius: $radius; 
 }
 
+@mixin animation-fill($direction) { 
+  -webkit-animation-fill-mode: $direction;
+  -moz-animation-fill-mode: $direction;
+  -ms-animation-fill-mode: $direction;
+  -o-animation-fill-mode: $direction;
+  animation-fill-mode: $direction;
+}
+
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
