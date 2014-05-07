@@ -3,7 +3,6 @@ var express = require('express')
   , user = require('./routes/user')
   , routes = require('./routes')
   , faye = require('faye')
-  , WebSocket = require('faye-websocket')
   , mongoose = require('mongoose')
   , passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy;
