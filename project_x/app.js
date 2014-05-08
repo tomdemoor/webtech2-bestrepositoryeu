@@ -83,6 +83,7 @@ app.get('/selectcountry', ensureAuthenticated, function(req, res){
 });
 
 app.get('/chat', ensureAuthenticated, function(req, res){
+  //res.type('text/plain');
   res.render('chat', { user: req.user });
 });
 

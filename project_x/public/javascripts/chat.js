@@ -137,26 +137,38 @@ $(document).ready(function(){
       //get text that needs to be translated & detected
       var chatVal = $(id).text();
       //complete url voor ajax call
-      var detectUrl = langBase+chatVal+langKey;
+      var detectUrl = document.createElement("script");
+      detectUrl.src = langBase+chatVal+langKey;
 
+      console.log(detectUrl.src)
+
+      //document.getElementsByTagName("head")[0].appendChild(detectUrl);
       //http://detectlanguage.com/
       //http://stackoverflow.com/questions/3467404/chrome-says-resource-interpreted-as-script-but-transferred-with-mime-type-text
       //HEADERS?
+      //http://nodejs.org/api/https.html
+      //https://github.com/mikeal/request
 
       $.ajax({
-                url: detectUrl,
+                url: detectUrl.src,
                 type: "GET",
-                //contentType: "application/json; charset=utf-8",
-                dataType: "jsonp",
+                //contentType: "application/javascript",
+                dataType: 'json',
+                onCallback: 'langCallback',
+                //jsonpCallback: "lang",
                 success: function(response) //Wnr get succesvol is gaat hij deze functie uitvoeren
                 {
                     //set city
                     //var city = response.results[0].address_components[2].long_name;
-                    console.log("got detection");
-                    var stringify = JSON.stringify(response);
-                    console.log(JSON.parse(stringify));
+                    JSON.stringify(response);
+                    var stringify = response;//.data.detections.language;
+                    console.log(JSON.parse(stringify));//JSON.parse(stringify)
                 }
       });
+
+      window.langCallback = function(response) {
+        alert(response);
+      }
 
       /*window.mycallback = function(response) {
         $(id).text(response);
