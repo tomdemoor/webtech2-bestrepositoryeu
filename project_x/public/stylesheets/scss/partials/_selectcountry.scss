@@ -15,11 +15,16 @@ $margin-center: 0px auto;
 	}
 }
 
+#expl
+{
+	margin-top: 61px;	
+}
+
 #connectme
 {
 	@extend #login;
 
-	margin-top: 167px;
+	margin-top: 70px;
 
 	a
 	{

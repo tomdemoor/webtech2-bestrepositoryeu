@@ -74,9 +74,10 @@ $(document).ready(function(){
     var userConnect = client.subscribe('/userconnect', function(message) {
       //timestamp als ID
       var timestamp = new Date().getTime();
+      var userLoc = $('#location').text();
 
       //handle messages en voeg ID aan messages toe om ze uniek te maken
-      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost'><span class='user'>Ela bot: </span>" + message.user + " has entered the chatroom." + "</br></p></div>");
+      $(".bulletin").append("<div>" + elaPIC + " <p class='chatpost'><span class='user'>Ela bot: </span>" + message.user + " has entered the chatroom from " + userLoc + "." + "</br></p></div>");
     }); 
 
     client.addExtension({
@@ -113,9 +114,66 @@ $(document).ready(function(){
       callback(message);
       }
     });
+
+    //ADD COUNTRY FROM USERS CONNECTING
+    //ADD TRANSLATE FROM AND TOO SETTINGS IN PROFILE
+
 });
 
+  //http://jsfiddle.net/n9YLp/1/
+  //http://social.msdn.microsoft.com/Forums/en-US/0ed61e34-1199-4000-8575-7976d7b98067/jquery-ajax-bing-translator?forum=microsofttranslator
+  //http://msdn.microsoft.com/en-us/library/ff512421.aspx
+  //http://www.microsoft.com/web/post/using-the-free-bing-translation-apis
+  //http://msdn.microsoft.com/en-us/library/hh454950.aspx
+  //http://msdn.microsoft.com/en-us/library/ff512385.aspx
+  //http://kitmenke.com/blog/2013/08/27/use-jquery-to-call-the-microsoft-translator-ajax-api/
+  //http://stackoverflow.com/questions/11679217/microsoft-azure-translator-ajax-api-not-working
+
+  function translateME(id){
+      //ajaxTranslate(chatVal, "en", "de");
+      //getlanguage
+      var langKey = "&key=cc871bbedadf4c08747376aba99984af";
+      var langBase = "http://ws.detectlanguage.com/0.2/detect?q=";
+      //get text that needs to be translated & detected
+      var chatVal = $(id).text();
+      //complete url voor ajax call
+      var detectUrl = langBase+chatVal+langKey;
+
+      //http://detectlanguage.com/
+      //http://stackoverflow.com/questions/3467404/chrome-says-resource-interpreted-as-script-but-transferred-with-mime-type-text
+      //HEADERS?
+
+      $.ajax({
+                url: detectUrl,
+                type: "GET",
+                //contentType: "application/json; charset=utf-8",
+                dataType: "jsonp",
+                success: function(response) //Wnr get succesvol is gaat hij deze functie uitvoeren
+                {
+                    //set city
+                    //var city = response.results[0].address_components[2].long_name;
+                    console.log("got detection");
+                    var stringify = JSON.stringify(response);
+                    console.log(JSON.parse(stringify));
+                }
+      });
+
+      /*window.mycallback = function(response) {
+        $(id).text(response);
+      }
+
+      //78280AF4DFA1CE1676AFE86340C690023A5AC139
+      //68D088969D79A8B23AF8585CC83EBA2A05A97651
+
+      var s = document.createElement("script");
+      s.src = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=78280AF4DFA1CE1676AFE86340C690023A5AC139&from=en&to=de&text=" + chatVal;
+
+      document.getElementsByTagName("head")[0].appendChild(s);*/
+  };
+
   /*TRANSLATE API*/
+
+  //https://github.com/troygoode/node-cors
 
   /*function ajaxTranslate(textToTranslate, fromLanguage, toLanguage) {
       //object aanmaken voor translate
@@ -147,30 +205,36 @@ $(document).ready(function(){
   function ajaxTranslateCallback(response) { 
     alert('ajaxTranslateCallback('+response+')'); 
   }*/
+    
+    // Get an access token now.  Good for 10 minutes.
+    /*getToken();
+    // Get a new one every 9 minutes.
+    setInterval(getToken, 9 * 60 * 1000);
 
-  
-  //http://jsfiddle.net/n9YLp/1/
-  //http://social.msdn.microsoft.com/Forums/en-US/0ed61e34-1199-4000-8575-7976d7b98067/jquery-ajax-bing-translator?forum=microsofttranslator
-  //http://msdn.microsoft.com/en-us/library/ff512421.aspx
-  //http://www.microsoft.com/web/post/using-the-free-bing-translation-apis
-  //http://msdn.microsoft.com/en-us/library/hh454950.aspx
-  //http://msdn.microsoft.com/en-us/library/ff512385.aspx
-  
+    function getToken() {
+      //token scriptje
+      //var requestStr = "../php/token.php";
+
+      var clientID = "th1s1smy4ppimtr4nsl4t1ngw1thf0r3l4";
+      var clientSecret = "57DkrwiR97DJ6AUah9StWW391rVgRdg3X8kQIbRVRQc=";
+      var requestStr = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13grant_type=client_credentials&client_id=" + clientID + "&client_secret=" + clientSecret + "&scope=http://api.microsofttranslator.com";
+
+      console.log(requestStr);
+
+      $.ajax({
+        url: requestStr,
+        type: "GET",
+        cache: true,
+        dataType: 'json',
+        success: function (data) {
+          JSON.stringify(data)
+          g_token = data.access_token;
+        }
+      });
+
+      console.log(g_token);
+    }
+
     function translateME(id){
-      //ajaxTranslate(chatVal, "en", "de");
-
-      //get text that needs to be translated
-      var chatVal = $(id).text();
-
-      window.mycallback = function(response) {
-        $(id).text(response);
-      }
-
-      //78280AF4DFA1CE1676AFE86340C690023A5AC139
-      //68D088969D79A8B23AF8585CC83EBA2A05A97651
-
-      var s = document.createElement("script");
-      s.src = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=78280AF4DFA1CE1676AFE86340C690023A5AC139&from=en&to=de&text=" + chatVal;
-
-      document.getElementsByTagName("head")[0].appendChild(s);
-    };
+      console.log(g_token);
+    };*/

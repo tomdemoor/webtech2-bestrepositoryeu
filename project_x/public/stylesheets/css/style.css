@@ -146,8 +146,11 @@ header p {
   #countrywrap #countries {
     width: 90%; }
 
+#expl {
+  margin-top: 61px; }
+
 #connectme {
-  margin-top: 167px; }
+  margin-top: 70px; }
   #connectme a {
     color: white; }
 
@@ -281,13 +284,13 @@ header p {
     width: 80%;
     margin: 0 auto; }
     #profile #profcontainer p {
-      padding: 10px 0px;
+      padding: 5px 0px;
       border-bottom: 1px solid black; }
     #profile #profcontainer #profilepic {
       padding-top: 0px;
       width: 120px;
       height: 120px;
-      margin-top: 105px;
+      margin-top: 45px;
       -webkit-transition-duration: 0.8s;
       -moz-transition-duration: 0.8s;
       -o-transition-duration: 0.8s;
