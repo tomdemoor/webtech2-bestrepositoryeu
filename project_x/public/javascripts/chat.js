@@ -137,10 +137,10 @@ $(document).ready(function(){
       //get text that needs to be translated & detected
       var chatVal = $(id).text();
       //complete url voor ajax call
-      var detectUrl = document.createElement("script");
-      detectUrl.src = langBase+chatVal+langKey;
+      //detectUrl = document.createElement("script"); //detectUrl.src
+      detectUrl = langBase+chatVal+langKey;
 
-      console.log(detectUrl.src)
+      console.log(detectUrl);
 
       //document.getElementsByTagName("head")[0].appendChild(detectUrl);
       //http://detectlanguage.com/
@@ -150,11 +150,14 @@ $(document).ready(function(){
       //https://github.com/mikeal/request
 
       $.ajax({
-                url: detectUrl.src,
+                //crossDomain: true,
+                url: detectUrl,
                 type: "GET",
-                //contentType: "application/javascript",
+                //contentType: "application/json",
+                //xhrFields: {withCredentials: false},
+                //headers: {},
                 dataType: 'json',
-                onCallback: 'langCallback',
+                //onCallback: 'langCallback',
                 //jsonpCallback: "lang",
                 success: function(response) //Wnr get succesvol is gaat hij deze functie uitvoeren
                 {
@@ -163,12 +166,15 @@ $(document).ready(function(){
                     JSON.stringify(response);
                     var stringify = response;//.data.detections.language;
                     console.log(JSON.parse(stringify));//JSON.parse(stringify)
+                },
+                error: function() {
+                    console.log("couldn't receive response");
                 }
       });
 
-      window.langCallback = function(response) {
+      /*window.langCallback = function(response) {
         alert(response);
-      }
+      }*/
 
       /*window.mycallback = function(response) {
         $(id).text(response);

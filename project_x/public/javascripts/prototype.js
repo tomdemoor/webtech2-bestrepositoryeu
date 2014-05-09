@@ -6,7 +6,9 @@ $(document).ready(function () {
 	if(localStorageAvailable())
 	{
 		var country = localStorage.getItem('country');
-		
+		var langUser = localStorage.getItem('lang');
+		$('#langBox').val(langUser);
+
 		if (country === null)
 	    {
 	    	getCountry();
@@ -25,6 +27,12 @@ $(document).ready(function () {
 	        	//opnieuw gegevens ophalen
 	        	getCountry();  
 	        }
+
+	        /*language save*/ /*mongoose*/
+			$( "#langBox" ).change(function() {
+ 				var lang = $(this).val();
+ 				localStorage.setItem("lang",lang);
+			});
 	    }
 	}else{
 		getCountry();

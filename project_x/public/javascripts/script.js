@@ -23,23 +23,24 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#profile').on("click",function(){
+	$('#profilepic').on("click",function(){
 		if(toggleNav === false){
-			$(this).addClass("nav-animation");
+			$("#profile").addClass("nav-animation");
 			$(".site-container").addClass("site-container-animation");
 			
-			$(this).removeClass("nav-animation-back");
+			$("#profile").removeClass("nav-animation-back");
 			$(".site-container").removeClass("site-container-animation-back");
 			toggleNav = true;
 		}else{
 			$(".site-container").removeClass("site-container-animation");
-			$(this).removeClass("nav-animation");
+			$("#profile").removeClass("nav-animation");
 			
 			$(".site-container").addClass("site-container-animation-back");
-			$(this).addClass("nav-animation-back");
+			$("#profile").addClass("nav-animation-back");
 			
 			toggleNav = false;
 		}
 	});
+
 	//nextJQfunction
 });
