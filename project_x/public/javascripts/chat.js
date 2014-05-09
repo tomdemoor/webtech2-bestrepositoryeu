@@ -129,16 +129,24 @@ $(document).ready(function(){
   //http://kitmenke.com/blog/2013/08/27/use-jquery-to-call-the-microsoft-translator-ajax-api/
   //http://stackoverflow.com/questions/11679217/microsoft-azure-translator-ajax-api-not-working
 
+  //url wordt custom php script op server
+  //server roept aan en geeft resultaat
+
+
   function translateME(id){
       //ajaxTranslate(chatVal, "en", "de");
       //getlanguage
-      var langKey = "&key=cc871bbedadf4c08747376aba99984af";
+     /* var langKey = "&key=cc871bbedadf4c08747376aba99984af";
       var langBase = "http://ws.detectlanguage.com/0.2/detect?q=";
       //get text that needs to be translated & detected
       var chatVal = $(id).text();
       //complete url voor ajax call
       //detectUrl = document.createElement("script"); //detectUrl.src
-      detectUrl = langBase+chatVal+langKey;
+      detectUrl = langBase+chatVal+langKey;*/
+
+      var langKey = "http://api.whatlanguage.net/language/v1/detect?key=60525228d76611e393e6d43d7ebed8c2&q="
+      var chatVal = $(id).text();
+      var detectUrl = langKey+chatVal;
 
       console.log(detectUrl);
 
@@ -148,6 +156,8 @@ $(document).ready(function(){
       //HEADERS?
       //http://nodejs.org/api/https.html
       //https://github.com/mikeal/request
+
+      //60525228d76611e393e6d43d7ebed8c2
 
       $.ajax({
                 //crossDomain: true,
