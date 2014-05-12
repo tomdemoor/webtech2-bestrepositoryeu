@@ -3,8 +3,7 @@ $(document).ready(function(){
   //getUSERID
   var userID = $('#userID').text();
 
-  //userpic & bot pic
-  var userPIC = '<img src="https://graph.facebook.com/' + userID + '/picture" alt="" class="chatPIC">';
+  //bot pic
   var elaPIC = '<img src="../stylesheets/assets/logos/ela_thumb.png" alt="" class="chatPIC">';
 
   //DEFAULT: BOT PRESENCE IN CHAT
@@ -21,7 +20,7 @@ $(document).ready(function(){
       var timestamp = new Date().getTime();
 
   		//handle messages en voeg ID aan messages toe om ze uniek te maken
-  		var newsPost = $(".bulletin").append("<div>" + userPIC + " <p class='chatpost' id='p" + timestamp + "'><span class='user'>" + message.user + ": </span><span class='translateMSG' style='cursor: pointer;' onclick='translateME(m" + timestamp + ")' id='m" + timestamp + "'>" + message.post + "</span></br></p></div>");
+  		var newsPost = $(".bulletin").append("<div>" + message.pic + " <p class='chatpost' id='p" + timestamp + "'><span class='user'>" + message.user + ": </span><span class='translateMSG' style='cursor: pointer;' onclick='translateME(m" + timestamp + ")' id='m" + timestamp + "'>" + message.post + "</span></br></p></div>");
   });
 
   	//onclick subscribe / publish
@@ -29,6 +28,7 @@ $(document).ready(function(){
   			//haal values op voor publish
   			var userVal = $('#userName').text();
   			var postVal = $('#message').val();
+        var userPIC = '<img src="https://graph.facebook.com/' + userID + '/picture" alt="" class="chatPIC">';
 
 		//als velden leeg zijn, error kleur
 		if(postVal === "" )
@@ -39,7 +39,7 @@ $(document).ready(function(){
     	{
     		$('#message').css("border-color", "#0dbebe");
         $('#message').val("");
-			  var postPublication = client.publish('/post', {post : postVal, user : userVal}); 
+			  var postPublication = client.publish('/post', {post : postVal, user : userVal, pic : userPIC}); 
 	    }
     }); //einde van post button onclick
 
@@ -49,7 +49,8 @@ $(document).ready(function(){
               //haal values op
           var userVal = $('#userName').text();
           var postVal = $('#message').val();
-
+          var userPIC = '<img src="https://graph.facebook.com/' + userID + '/picture" alt="" class="chatPIC">';
+          
       //als velden leeg zijn, error kleur
         if(postVal === "" )
         {
@@ -59,7 +60,7 @@ $(document).ready(function(){
         {
           $('#message').css("border-color", "#0dbebe");
           $('#message').val("");
-          var postPublication = client.publish('/post', {post : postVal, user : userVal}); 
+          var postPublication = client.publish('/post', {post : postVal, user : userVal, pic : userPIC}); 
         }
       }
     });
