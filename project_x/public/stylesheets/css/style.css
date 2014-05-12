@@ -304,6 +304,11 @@ header p {
       -webkit-transform: rotate(360deg);
       -moz-transform: rotate(360deg);
       -o-transform: rotate(360deg); }
+    #profile #profcontainer #langBox {
+      background-color: #323232;
+      color: white;
+      border: 0px;
+      outline: 0px; }
 
 .nav-animation {
   -webkit-animation: nav-animation 1s;

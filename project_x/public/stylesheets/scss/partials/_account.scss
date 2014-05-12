@@ -59,6 +59,14 @@ $color-txt: #f1f1f1;
     		-moz-transform:rotate(360deg);
     		-o-transform:rotate(360deg);
 		}
+
+		#langBox
+		{
+			background-color: #323232;
+			color: white;
+			border:0px;
+        	outline:0px;
+		}
 	}
 }
 
