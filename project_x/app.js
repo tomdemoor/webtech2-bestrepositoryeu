@@ -5,6 +5,7 @@ var express = require('express')
   , faye = require('faye')
   , mongoose = require('mongoose')
   , passport = require('passport')
+  , unirest = require('unirest')
   , FacebookStrategy = require('passport-facebook').Strategy;
 
 var FACEBOOK_APP_ID = "488287867965014"
@@ -110,6 +111,24 @@ app.get('/auth/facebook/callback',
 app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
+});
+
+app.post('/language', function(req, res){
+  var chatVal = req.body.chatVal;
+  //console.log("kziterin");
+
+  var Request = unirest.post("https://community-language-detection.p.mashape.com/detect?key=cc871bbedadf4c08747376aba99984af")
+        .headers({ 
+          "X-Mashape-Authorization": "lNi9lpAY6xGkVlX34CELPka4jyF003cM"
+        })
+        .send({ 
+          "q": chatVal
+        })
+        .end(function (response) {
+          //console.log(response.raw_body);
+          res.send(response.raw_body);
+        });
+
 });
 
 /*faye server*/

@@ -9,6 +9,7 @@
     "express": "3.5.0",
     "faye": "*",
     "jade": "*",
+    "unirest": "*",
     "ejs": ">= 0.0.0",
     "mongoose": "^3.8.3",
     "passport-facebook": "^1.0.2",

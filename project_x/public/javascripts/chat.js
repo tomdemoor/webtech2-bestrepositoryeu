@@ -114,10 +114,6 @@ $(document).ready(function(){
       callback(message);
       }
     });
-
-    //ADD COUNTRY FROM USERS CONNECTING
-    //ADD TRANSLATE FROM AND TOO SETTINGS IN PROFILE
-
 });
 
   //http://jsfiddle.net/n9YLp/1/
@@ -132,61 +128,34 @@ $(document).ready(function(){
   //url wordt custom php script op server
   //server roept aan en geeft resultaat
 
-
-  function translateME(id){
-      //ajaxTranslate(chatVal, "en", "de");
-      //getlanguage
-     /* var langKey = "&key=cc871bbedadf4c08747376aba99984af";
-      var langBase = "http://ws.detectlanguage.com/0.2/detect?q=";
-      //get text that needs to be translated & detected
+function translateME(id){
+      var result = "";
       var chatVal = $(id).text();
-      //complete url voor ajax call
-      //detectUrl = document.createElement("script"); //detectUrl.src
-      detectUrl = langBase+chatVal+langKey;*/
-
-      var langKey = "http://api.whatlanguage.net/language/v1/detect?key=60525228d76611e393e6d43d7ebed8c2&q="
-      var chatVal = $(id).text();
-      var detectUrl = langKey+chatVal;
-
-      console.log(detectUrl);
-
-      //document.getElementsByTagName("head")[0].appendChild(detectUrl);
-      //http://detectlanguage.com/
-      //http://stackoverflow.com/questions/3467404/chrome-says-resource-interpreted-as-script-but-transferred-with-mime-type-text
-      //HEADERS?
-      //http://nodejs.org/api/https.html
-      //https://github.com/mikeal/request
-
-      //60525228d76611e393e6d43d7ebed8c2
 
       $.ajax({
                 //crossDomain: true,
-                url: detectUrl,
-                type: "GET",
-                //contentType: "application/json",
-                //xhrFields: {withCredentials: false},
-                //headers: {},
+                url: "/language",
+                type: "POST",
+                data: {chatVal: chatVal},
                 dataType: 'json',
-                //onCallback: 'langCallback',
-                //jsonpCallback: "lang",
                 success: function(response) //Wnr get succesvol is gaat hij deze functie uitvoeren
                 {
-                    //set city
-                    //var city = response.results[0].address_components[2].long_name;
-                    JSON.stringify(response);
-                    var stringify = response;//.data.detections.language;
-                    console.log(JSON.parse(stringify));//JSON.parse(stringify)
+                  if(response != ""){
+                    console.log(response);
+                    result = response.data.detections[0].language;
+                    console.log(result);
+                  }
                 },
                 error: function() {
-                    console.log("couldn't receive response");
+                    alert("error");
                 }
       });
 
-      /*window.langCallback = function(response) {
-        alert(response);
-      }*/
+      //TRANSLATE
 
-      /*window.mycallback = function(response) {
+      var langToo = $('#langBox').val();
+
+      window.mycallback = function(response) {
         $(id).text(response);
       }
 
@@ -194,9 +163,9 @@ $(document).ready(function(){
       //68D088969D79A8B23AF8585CC83EBA2A05A97651
 
       var s = document.createElement("script");
-      s.src = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=78280AF4DFA1CE1676AFE86340C690023A5AC139&from=en&to=de&text=" + chatVal;
+      s.src = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=78280AF4DFA1CE1676AFE86340C690023A5AC139&from="+ result+ "&to=" + langToo + "&text=" + chatVal;
 
-      document.getElementsByTagName("head")[0].appendChild(s);*/
+      document.getElementsByTagName("head")[0].appendChild(s);
   };
 
   /*TRANSLATE API*/
